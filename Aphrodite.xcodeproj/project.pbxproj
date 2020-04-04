@@ -1,0 +1,478 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3814CFDF243866B00059C454 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3814CFDE243866B00059C454 /* AppDelegate.swift */; };
+		3814CFE1243866B00059C454 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3814CFE0243866B00059C454 /* SceneDelegate.swift */; };
+		3814CFE3243866B00059C454 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3814CFE2243866B00059C454 /* ContentView.swift */; };
+		3814CFE5243866B10059C454 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3814CFE4243866B10059C454 /* Assets.xcassets */; };
+		3814CFE8243866B10059C454 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3814CFE7243866B10059C454 /* Preview Assets.xcassets */; };
+		3814CFEB243866B10059C454 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3814CFE9243866B10059C454 /* LaunchScreen.storyboard */; };
+		3814CFF6243866B10059C454 /* AphroditeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3814CFF5243866B10059C454 /* AphroditeTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		3814CFF2243866B10059C454 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3814CFD3243866B00059C454 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3814CFDA243866B00059C454;
+			remoteInfo = Aphrodite;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		3814CFDB243866B00059C454 /* Aphrodite.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Aphrodite.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3814CFDE243866B00059C454 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		3814CFE0243866B00059C454 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		3814CFE2243866B00059C454 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		3814CFE4243866B10059C454 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		3814CFE7243866B10059C454 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		3814CFEA243866B10059C454 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		3814CFEC243866B10059C454 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3814CFF1243866B10059C454 /* AphroditeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AphroditeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3814CFF5243866B10059C454 /* AphroditeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AphroditeTests.swift; sourceTree = "<group>"; };
+		3814CFF7243866B10059C454 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3814CFD8243866B00059C454 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3814CFEE243866B10059C454 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3814CFD2243866B00059C454 = {
+			isa = PBXGroup;
+			children = (
+				3814CFDD243866B00059C454 /* Aphrodite */,
+				3814CFF4243866B10059C454 /* AphroditeTests */,
+				3814CFDC243866B00059C454 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		3814CFDC243866B00059C454 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3814CFDB243866B00059C454 /* Aphrodite.app */,
+				3814CFF1243866B10059C454 /* AphroditeTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3814CFDD243866B00059C454 /* Aphrodite */ = {
+			isa = PBXGroup;
+			children = (
+				3814CFDE243866B00059C454 /* AppDelegate.swift */,
+				3814CFE0243866B00059C454 /* SceneDelegate.swift */,
+				3814CFE2243866B00059C454 /* ContentView.swift */,
+				3814CFE4243866B10059C454 /* Assets.xcassets */,
+				3814CFE9243866B10059C454 /* LaunchScreen.storyboard */,
+				3814CFEC243866B10059C454 /* Info.plist */,
+				3814CFE6243866B10059C454 /* Preview Content */,
+			);
+			path = Aphrodite;
+			sourceTree = "<group>";
+		};
+		3814CFE6243866B10059C454 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				3814CFE7243866B10059C454 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		3814CFF4243866B10059C454 /* AphroditeTests */ = {
+			isa = PBXGroup;
+			children = (
+				3814CFF5243866B10059C454 /* AphroditeTests.swift */,
+				3814CFF7243866B10059C454 /* Info.plist */,
+			);
+			path = AphroditeTests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3814CFDA243866B00059C454 /* Aphrodite */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3814CFFA243866B10059C454 /* Build configuration list for PBXNativeTarget "Aphrodite" */;
+			buildPhases = (
+				3814CFD7243866B00059C454 /* Sources */,
+				3814CFD8243866B00059C454 /* Frameworks */,
+				3814CFD9243866B00059C454 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Aphrodite;
+			productName = Aphrodite;
+			productReference = 3814CFDB243866B00059C454 /* Aphrodite.app */;
+			productType = "com.apple.product-type.application";
+		};
+		3814CFF0243866B10059C454 /* AphroditeTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3814CFFD243866B10059C454 /* Build configuration list for PBXNativeTarget "AphroditeTests" */;
+			buildPhases = (
+				3814CFED243866B10059C454 /* Sources */,
+				3814CFEE243866B10059C454 /* Frameworks */,
+				3814CFEF243866B10059C454 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3814CFF3243866B10059C454 /* PBXTargetDependency */,
+			);
+			name = AphroditeTests;
+			productName = AphroditeTests;
+			productReference = 3814CFF1243866B10059C454 /* AphroditeTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3814CFD3243866B00059C454 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1140;
+				LastUpgradeCheck = 1140;
+				ORGANIZATIONNAME = "Andreas Link";
+				TargetAttributes = {
+					3814CFDA243866B00059C454 = {
+						CreatedOnToolsVersion = 11.4;
+					};
+					3814CFF0243866B10059C454 = {
+						CreatedOnToolsVersion = 11.4;
+						TestTargetID = 3814CFDA243866B00059C454;
+					};
+				};
+			};
+			buildConfigurationList = 3814CFD6243866B00059C454 /* Build configuration list for PBXProject "Aphrodite" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 3814CFD2243866B00059C454;
+			productRefGroup = 3814CFDC243866B00059C454 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3814CFDA243866B00059C454 /* Aphrodite */,
+				3814CFF0243866B10059C454 /* AphroditeTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3814CFD9243866B00059C454 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3814CFEB243866B10059C454 /* LaunchScreen.storyboard in Resources */,
+				3814CFE8243866B10059C454 /* Preview Assets.xcassets in Resources */,
+				3814CFE5243866B10059C454 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3814CFEF243866B10059C454 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3814CFD7243866B00059C454 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3814CFDF243866B00059C454 /* AppDelegate.swift in Sources */,
+				3814CFE1243866B00059C454 /* SceneDelegate.swift in Sources */,
+				3814CFE3243866B00059C454 /* ContentView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3814CFED243866B10059C454 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3814CFF6243866B10059C454 /* AphroditeTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		3814CFF3243866B10059C454 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3814CFDA243866B00059C454 /* Aphrodite */;
+			targetProxy = 3814CFF2243866B10059C454 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		3814CFE9243866B10059C454 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3814CFEA243866B10059C454 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		3814CFF8243866B10059C454 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		3814CFF9243866B10059C454 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		3814CFFB243866B10059C454 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"Aphrodite/Preview Content\"";
+				DEVELOPMENT_TEAM = 59983C7393;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = Aphrodite/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = de.link.Aphrodite;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		3814CFFC243866B10059C454 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"Aphrodite/Preview Content\"";
+				DEVELOPMENT_TEAM = 59983C7393;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = Aphrodite/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = de.link.Aphrodite;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		3814CFFE243866B10059C454 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 59983C7393;
+				INFOPLIST_FILE = AphroditeTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = de.link.AphroditeTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Aphrodite.app/Aphrodite";
+			};
+			name = Debug;
+		};
+		3814CFFF243866B10059C454 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 59983C7393;
+				INFOPLIST_FILE = AphroditeTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = de.link.AphroditeTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Aphrodite.app/Aphrodite";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3814CFD6243866B00059C454 /* Build configuration list for PBXProject "Aphrodite" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3814CFF8243866B10059C454 /* Debug */,
+				3814CFF9243866B10059C454 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3814CFFA243866B10059C454 /* Build configuration list for PBXNativeTarget "Aphrodite" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3814CFFB243866B10059C454 /* Debug */,
+				3814CFFC243866B10059C454 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3814CFFD243866B10059C454 /* Build configuration list for PBXNativeTarget "AphroditeTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3814CFFE243866B10059C454 /* Debug */,
+				3814CFFF243866B10059C454 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 3814CFD3243866B00059C454 /* Project object */;
+}
