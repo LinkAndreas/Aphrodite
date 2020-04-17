@@ -1,0 +1,8 @@
+//  Copyright © 2020 Andreas Link. All rights reserved.
+
+import Foundation
+
+// Reference: https://github.com/Alamofire/Alamofire/blob/master/Source/ParameterEncoding.swift
+protocol ParameterEncoding {
+    func encode(_ urlRequest: URLRequest, with parameters: [String: Any]?) throws -> URLRequest
+}
