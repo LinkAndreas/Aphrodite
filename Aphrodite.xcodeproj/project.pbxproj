@@ -79,6 +79,7 @@
 		3814CFDD243866B00059C454 /* Aphrodite */ = {
 			isa = PBXGroup;
 			children = (
+				384BA205244991A100631E9C /* Sources */,
 				3814CFDE243866B00059C454 /* AppDelegate.swift */,
 				3814CFE0243866B00059C454 /* SceneDelegate.swift */,
 				3814CFE2243866B00059C454 /* ContentView.swift */,
@@ -105,6 +106,13 @@
 				3814CFF7243866B10059C454 /* Info.plist */,
 			);
 			path = AphroditeTests;
+			sourceTree = "<group>";
+		};
+		384BA205244991A100631E9C /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Sources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
