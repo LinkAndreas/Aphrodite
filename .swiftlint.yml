@@ -80,7 +80,7 @@ explicit_type_interface:
 
 file_header:
   required_pattern: |
-                    \/\/  Copyright © \d{4} EnBW AG\. All rights reserved\.
+                    \/\/  Copyright © \d{4} Andreas Link\. All rights reserved\.
 
 file_types_order:
   order:
