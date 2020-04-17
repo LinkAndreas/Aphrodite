@@ -14,6 +14,8 @@
 		3814CFE8243866B10059C454 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3814CFE7243866B10059C454 /* Preview Assets.xcassets */; };
 		3814CFEB243866B10059C454 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3814CFE9243866B10059C454 /* LaunchScreen.storyboard */; };
 		3814CFF6243866B10059C454 /* AphroditeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3814CFF5243866B10059C454 /* AphroditeTests.swift */; };
+		384BA20D2449958700631E9C /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 384BA20B2449958600631E9C /* .swiftlint.yml */; };
+		384BA20E2449958700631E9C /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 384BA20C2449958700631E9C /* .gitignore */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +40,8 @@
 		3814CFF1243866B10059C454 /* AphroditeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AphroditeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3814CFF5243866B10059C454 /* AphroditeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AphroditeTests.swift; sourceTree = "<group>"; };
 		3814CFF7243866B10059C454 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		384BA20B2449958600631E9C /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
+		384BA20C2449958700631E9C /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +68,7 @@
 				3814CFDD243866B00059C454 /* Aphrodite */,
 				3814CFF4243866B10059C454 /* AphroditeTests */,
 				3814CFDC243866B00059C454 /* Products */,
+				384BA20A2449954200631E9C /* RootFiles */,
 			);
 			sourceTree = "<group>";
 		};
@@ -79,14 +84,10 @@
 		3814CFDD243866B00059C454 /* Aphrodite */ = {
 			isa = PBXGroup;
 			children = (
-				384BA205244991A100631E9C /* Sources */,
-				3814CFDE243866B00059C454 /* AppDelegate.swift */,
-				3814CFE0243866B00059C454 /* SceneDelegate.swift */,
-				3814CFE2243866B00059C454 /* ContentView.swift */,
-				3814CFE4243866B10059C454 /* Assets.xcassets */,
-				3814CFE9243866B10059C454 /* LaunchScreen.storyboard */,
 				3814CFEC243866B10059C454 /* Info.plist */,
 				3814CFE6243866B10059C454 /* Preview Content */,
+				384BA2072449940600631E9C /* Resources */,
+				384BA205244991A100631E9C /* Sources */,
 			);
 			path = Aphrodite;
 			sourceTree = "<group>";
@@ -111,8 +112,29 @@
 		384BA205244991A100631E9C /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				3814CFDE243866B00059C454 /* AppDelegate.swift */,
+				3814CFE0243866B00059C454 /* SceneDelegate.swift */,
+				3814CFE2243866B00059C454 /* ContentView.swift */,
 			);
 			path = Sources;
+			sourceTree = "<group>";
+		};
+		384BA2072449940600631E9C /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				3814CFE4243866B10059C454 /* Assets.xcassets */,
+				3814CFE9243866B10059C454 /* LaunchScreen.storyboard */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		384BA20A2449954200631E9C /* RootFiles */ = {
+			isa = PBXGroup;
+			children = (
+				384BA20C2449958700631E9C /* .gitignore */,
+				384BA20B2449958600631E9C /* .swiftlint.yml */,
+			);
+			name = RootFiles;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -122,6 +144,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3814CFFA243866B10059C454 /* Build configuration list for PBXNativeTarget "Aphrodite" */;
 			buildPhases = (
+				384BA2062449932600631E9C /* SwiftLint */,
 				3814CFD7243866B00059C454 /* Sources */,
 				3814CFD8243866B00059C454 /* Frameworks */,
 				3814CFD9243866B00059C454 /* Resources */,
@@ -196,6 +219,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				384BA20E2449958700631E9C /* .gitignore in Resources */,
+				384BA20D2449958700631E9C /* .swiftlint.yml in Resources */,
 				3814CFEB243866B10059C454 /* LaunchScreen.storyboard in Resources */,
 				3814CFE8243866B10059C454 /* Preview Assets.xcassets in Resources */,
 				3814CFE5243866B10059C454 /* Assets.xcassets in Resources */,
@@ -210,6 +235,27 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		384BA2062449932600631E9C /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		3814CFD7243866B00059C454 /* Sources */ = {
