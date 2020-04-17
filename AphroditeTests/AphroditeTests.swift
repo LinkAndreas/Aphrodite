@@ -1,10 +1,4 @@
-//
-//  AphroditeTests.swift
-//  AphroditeTests
-//
-//  Created by Andreas Link on 04.04.20.
 //  Copyright © 2020 Andreas Link. All rights reserved.
-//
 
 import XCTest
 @testable import Aphrodite
