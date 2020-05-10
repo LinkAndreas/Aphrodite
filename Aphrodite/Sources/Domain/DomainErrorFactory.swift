@@ -33,17 +33,4 @@ enum DomainErrorFactory {
             return .unexpected
         }
     }
-
-    static func make(from error: URLError) -> DomainError {
-        switch error.code {
-        case .cancelled:
-            return .serviceCancelled
-
-        case .notConnectedToInternet:
-            return .notConnectedToInternet
-
-        default:
-            return .unexpected
-        }
-    }
 }
