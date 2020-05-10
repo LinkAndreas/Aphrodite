@@ -4,7 +4,8 @@ import Foundation
 
 enum ApiErrorFactory {
     static func make(from response: NetworkResponse) -> ApiError? {
-        switch response.httpUrlResponse.statusCode {
+        let statusCode: Int = response.httpUrlResponse.statusCode
+        switch statusCode {
         case 401:
             return ApiError.unauthorized(response.httpUrlResponse)
 
@@ -15,10 +16,10 @@ enum ApiErrorFactory {
             return ApiError.notFound(response.httpUrlResponse)
 
         case 405 ..< 500:
-            return ApiError.client(response.httpUrlResponse)
+            return ApiError.client(response.httpUrlResponse, statusCode)
 
         case 500 ..< 600:
-            return ApiError.server(response.httpUrlResponse)
+            return ApiError.server(response.httpUrlResponse, statusCode)
 
         default:
             return nil
