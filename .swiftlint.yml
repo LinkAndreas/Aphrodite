@@ -1,6 +1,6 @@
 included:
-- Aphrodite/Sources
-- AphroditeTests/Sources
+- Sources/
+- Tests/
 
 analyzer_rules:
 - unused_import
