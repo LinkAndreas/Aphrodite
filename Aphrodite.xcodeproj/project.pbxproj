@@ -14,6 +14,7 @@
 		3814CFE8243866B10059C454 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3814CFE7243866B10059C454 /* Preview Assets.xcassets */; };
 		3814CFEB243866B10059C454 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3814CFE9243866B10059C454 /* LaunchScreen.storyboard */; };
 		3814CFF6243866B10059C454 /* AphroditeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3814CFF5243866B10059C454 /* AphroditeTests.swift */; };
+		3846BA4E24684CCA00C9BC90 /* StatusCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3846BA4D24684CCA00C9BC90 /* StatusCode.swift */; };
 		384BA20D2449958700631E9C /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 384BA20B2449958600631E9C /* .swiftlint.yml */; };
 		384BA20E2449958700631E9C /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 384BA20C2449958700631E9C /* .gitignore */; };
 		384BA212244996C400631E9C /* NetworkTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384BA211244996C400631E9C /* NetworkTarget.swift */; };
@@ -62,6 +63,7 @@
 		3814CFF1243866B10059C454 /* AphroditeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AphroditeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3814CFF5243866B10059C454 /* AphroditeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AphroditeTests.swift; sourceTree = "<group>"; };
 		3814CFF7243866B10059C454 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3846BA4D24684CCA00C9BC90 /* StatusCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusCode.swift; sourceTree = "<group>"; };
 		384BA20B2449958600631E9C /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		384BA20C2449958700631E9C /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		384BA211244996C400631E9C /* NetworkTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkTarget.swift; sourceTree = "<group>"; };
@@ -189,9 +191,6 @@
 			children = (
 				384BA2362449996400631E9C /* ApiManager.swift */,
 				384BA210244996B500631E9C /* Base */,
-				384BA2572449CB3100631E9C /* Entities */,
-				384BA24D2449C57E00631E9C /* Extensions */,
-				384BA24A2449C48200631E9C /* Targets */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -202,6 +201,7 @@
 				384BA229244997F700631E9C /* Encodings */,
 				384BA211244996C400631E9C /* NetworkTarget.swift */,
 				384BA2172449979F00631E9C /* ApiError.swift */,
+				3846BA4D24684CCA00C9BC90 /* StatusCode.swift */,
 				384BA2182449979F00631E9C /* ApiErrorFactory.swift */,
 				384BA2152449979F00631E9C /* HttpHeaderField.swift */,
 				384BA2162449979F00631E9C /* HttpMethod.swift */,
@@ -379,6 +379,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3846BA4E24684CCA00C9BC90 /* StatusCode.swift in Sources */,
 				384BA2212449979F00631E9C /* ApiError.swift in Sources */,
 				384BA2242449979F00631E9C /* NetworkResponse.swift in Sources */,
 				384BA23D24499A5D00631E9C /* DomainError.swift in Sources */,

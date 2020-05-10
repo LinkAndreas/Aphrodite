@@ -7,8 +7,8 @@ enum ApiError: Error {
     case notFound(HTTPURLResponse)
     case forbidden(HTTPURLResponse)
     case underlying(HTTPURLResponse, Error)
-    case client(HTTPURLResponse)
-    case server(HTTPURLResponse)
+    case client(HTTPURLResponse, StatusCode)
+    case server(HTTPURLResponse, StatusCode)
     case decoding(DecodingError)
     case encoding(EncodingError)
     case serviceCancelled
