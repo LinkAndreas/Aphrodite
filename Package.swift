@@ -1,6 +1,4 @@
-//  Copyright © 2020 Andreas Link. All rights reserved.
-
-// swift-tools-version:5.1
+// swift-tools-version:5.2
 import PackageDescription
 
 let package = Package(
