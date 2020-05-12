@@ -26,13 +26,13 @@ final public class Aphrodite<DEF: DomainErrorFactory> {
 
                 let networkResponse: NetworkResponse = .init(httpUrlResponse: httpUrlResponse, data: data)
 
-                if let apiError = ApiErrorFactory.make(from: networkResponse) {
+                if let apiError = AphroditeErrorFactory.make(from: networkResponse) {
                     throw apiError
                 }
 
                 return networkResponse
             }
-            .mapError(ApiErrorFactory.make)
+            .mapError(AphroditeErrorFactory.make)
             .eraseToAnyPublisher()
     }
 }
@@ -67,7 +67,7 @@ public extension Aphrodite {
                     throw error
                 }
             }
-            .mapError(ApiErrorFactory.make)
+            .mapError(AphroditeErrorFactory.make)
             .mapError(DEF.make)
             .map(mapper)
             .eraseToAnyPublisher()

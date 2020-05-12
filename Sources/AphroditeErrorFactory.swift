@@ -2,7 +2,7 @@
 
 import Foundation
 
-internal enum ApiErrorFactory {
+internal enum AphroditeErrorFactory {
     static func make(from response: NetworkResponse) -> AphroditeError? {
         let statusCode: Int = response.httpUrlResponse.statusCode
         switch statusCode {
