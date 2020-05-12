@@ -3,9 +3,9 @@
 import Foundation
 
 // Reference: https://github.com/Alamofire/Alamofire/blob/master/Source/ParameterEncoding.swift
-struct JSONParameterEncoding: ParameterEncoding {
-    static let `default`: JSONParameterEncoding = .init()
-    static let prettyPrinted: JSONParameterEncoding = .init(options: .prettyPrinted)
+public struct JSONParameterEncoding: ParameterEncoding {
+    public static let `default`: JSONParameterEncoding = .init()
+    public static let prettyPrinted: JSONParameterEncoding = .init(options: .prettyPrinted)
 
     let options: JSONSerialization.WritingOptions
 
@@ -13,7 +13,7 @@ struct JSONParameterEncoding: ParameterEncoding {
         self.options = options
     }
 
-    func encode(_ request: URLRequest, with parameters: [String: Any]?) throws -> URLRequest {
+    public func encode(_ request: URLRequest, with parameters: [String: Any]?) throws -> URLRequest {
         guard let parameters = parameters else { return request }
 
         var modifiedRequest: URLRequest = request
