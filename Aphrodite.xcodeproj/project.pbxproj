@@ -30,9 +30,8 @@
 		38C155C424685282003D9146 /* NetworkPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C1559724685282003D9146 /* NetworkPlugin.swift */; };
 		38C155C524685282003D9146 /* HttpMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C1559824685282003D9146 /* HttpMethod.swift */; };
 		38C155C624685282003D9146 /* URLRequestFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C1559924685282003D9146 /* URLRequestFactory.swift */; };
-		38C155C724685282003D9146 /* ApiErrorFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C1559A24685282003D9146 /* ApiErrorFactory.swift */; };
+		38C155C724685282003D9146 /* AphroditeErrorFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C1559A24685282003D9146 /* AphroditeErrorFactory.swift */; };
 		38C155C824685282003D9146 /* NetworkTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C1559B24685282003D9146 /* NetworkTarget.swift */; };
-		38C155D724685282003D9146 /* DomainError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C155AD24685282003D9146 /* DomainError.swift */; };
 		38C155D824685282003D9146 /* DomainErrorFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C155AE24685282003D9146 /* DomainErrorFactory.swift */; };
 		38C1565F2468530E003D9146 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 38C1565D2468530E003D9146 /* .swiftlint.yml */; };
 		38C156602468530E003D9146 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 38C1565E2468530E003D9146 /* .gitignore */; };
@@ -75,13 +74,11 @@
 		38C1559724685282003D9146 /* NetworkPlugin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkPlugin.swift; sourceTree = "<group>"; };
 		38C1559824685282003D9146 /* HttpMethod.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpMethod.swift; sourceTree = "<group>"; };
 		38C1559924685282003D9146 /* URLRequestFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLRequestFactory.swift; sourceTree = "<group>"; };
-		38C1559A24685282003D9146 /* ApiErrorFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiErrorFactory.swift; sourceTree = "<group>"; };
+		38C1559A24685282003D9146 /* AphroditeErrorFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AphroditeErrorFactory.swift; sourceTree = "<group>"; };
 		38C1559B24685282003D9146 /* NetworkTarget.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkTarget.swift; sourceTree = "<group>"; };
-		38C155AD24685282003D9146 /* DomainError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DomainError.swift; sourceTree = "<group>"; };
 		38C155AE24685282003D9146 /* DomainErrorFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DomainErrorFactory.swift; sourceTree = "<group>"; };
 		38C1565D2468530E003D9146 /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		38C1565E2468530E003D9146 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
-		38C1566224685773003D9146 /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,10 +100,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		38A8F802246A5F7E000904A7 /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				38C155642468522E003D9146 /* Aphrodite.h */,
+				38C155652468522E003D9146 /* Info.plist */,
+			);
+			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
 		38C155572468522E003D9146 = {
 			isa = PBXGroup;
 			children = (
 				38C1557B24685282003D9146 /* Sources */,
+				38A8F802246A5F7E000904A7 /* SupportingFiles */,
 				38C1556E2468522E003D9146 /* Tests */,
 				38C1565C246852C3003D9146 /* RootFiles */,
 				38C155622468522E003D9146 /* Products */,
@@ -136,12 +143,9 @@
 			children = (
 				38C1558924685282003D9146 /* Aphrodite.swift */,
 				38C1559224685282003D9146 /* AphroditeError.swift */,
-				38C15664246858C4003D9146 /* Base */,
+				38C1559A24685282003D9146 /* AphroditeErrorFactory.swift */,
 				38C1557C24685282003D9146 /* Globals */,
-				38C155A324685282003D9146 /* Domain */,
-				38C1566224685773003D9146 /* Package.swift */,
-				38C155642468522E003D9146 /* Aphrodite.h */,
-				38C155652468522E003D9146 /* Info.plist */,
+				38C15664246858C4003D9146 /* Base */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -178,15 +182,6 @@
 			path = Encodings;
 			sourceTree = "<group>";
 		};
-		38C155A324685282003D9146 /* Domain */ = {
-			isa = PBXGroup;
-			children = (
-				38C155AD24685282003D9146 /* DomainError.swift */,
-				38C155AE24685282003D9146 /* DomainErrorFactory.swift */,
-			);
-			path = Domain;
-			sourceTree = "<group>";
-		};
 		38C1565C246852C3003D9146 /* RootFiles */ = {
 			isa = PBXGroup;
 			children = (
@@ -199,17 +194,17 @@
 		38C15664246858C4003D9146 /* Base */ = {
 			isa = PBXGroup;
 			children = (
-				38C1558D24685282003D9146 /* Encodings */,
-				38C1559124685282003D9146 /* StatusCode.swift */,
-				38C1559324685282003D9146 /* NetworkRequestHeaderFactory.swift */,
-				38C1559424685282003D9146 /* HttpTask.swift */,
-				38C1559524685282003D9146 /* NetworkResponse.swift */,
+				38C155AE24685282003D9146 /* DomainErrorFactory.swift */,
 				38C1559624685282003D9146 /* HttpHeaderField.swift */,
-				38C1559724685282003D9146 /* NetworkPlugin.swift */,
 				38C1559824685282003D9146 /* HttpMethod.swift */,
-				38C1559924685282003D9146 /* URLRequestFactory.swift */,
-				38C1559A24685282003D9146 /* ApiErrorFactory.swift */,
+				38C1559424685282003D9146 /* HttpTask.swift */,
+				38C1559724685282003D9146 /* NetworkPlugin.swift */,
+				38C1559324685282003D9146 /* NetworkRequestHeaderFactory.swift */,
+				38C1559524685282003D9146 /* NetworkResponse.swift */,
 				38C1559B24685282003D9146 /* NetworkTarget.swift */,
+				38C1559124685282003D9146 /* StatusCode.swift */,
+				38C1559924685282003D9146 /* URLRequestFactory.swift */,
+				38C1558D24685282003D9146 /* Encodings */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -360,14 +355,13 @@
 				38C155D824685282003D9146 /* DomainErrorFactory.swift in Sources */,
 				38C155BC24685282003D9146 /* URLParameterEncoding.swift in Sources */,
 				38C155C524685282003D9146 /* HttpMethod.swift in Sources */,
-				38C155C724685282003D9146 /* ApiErrorFactory.swift in Sources */,
+				38C155C724685282003D9146 /* AphroditeErrorFactory.swift in Sources */,
 				38C155C124685282003D9146 /* HttpTask.swift in Sources */,
 				38C155B524685282003D9146 /* URLExtensions.swift in Sources */,
 				38C155C824685282003D9146 /* NetworkTarget.swift in Sources */,
 				38C155BF24685282003D9146 /* AphroditeError.swift in Sources */,
 				38C155BB24685282003D9146 /* ParameterEncoding.swift in Sources */,
 				38C155B324685282003D9146 /* CharacterSetExtension.swift in Sources */,
-				38C155D724685282003D9146 /* DomainError.swift in Sources */,
 				38C155C424685282003D9146 /* NetworkPlugin.swift in Sources */,
 				38C155B624685282003D9146 /* JSONEncoderExtensions.swift in Sources */,
 				38C155B224685282003D9146 /* DictionaryExtensions.swift in Sources */,
@@ -522,7 +516,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = Sources/Info.plist;
+				INFOPLIST_FILE = SupportingFIles/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -546,7 +540,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = Sources/Info.plist;
+				INFOPLIST_FILE = SupportingFIles/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
