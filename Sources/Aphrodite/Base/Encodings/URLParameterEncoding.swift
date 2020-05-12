@@ -3,8 +3,8 @@
 import Foundation
 
 // Reference: https://github.com/Alamofire/Alamofire/blob/master/Source/ParameterEncoding.swift
-struct URLParameterEncoding: ParameterEncoding {
-    enum Destination {
+public struct URLParameterEncoding: ParameterEncoding {
+    public enum Destination {
         case methodDependent
         case queryString
         case httpBody
@@ -23,7 +23,7 @@ struct URLParameterEncoding: ParameterEncoding {
         }
     }
 
-    enum ArrayEncoding {
+    public enum ArrayEncoding {
         case brackets
         case noBrackets
 
@@ -38,7 +38,7 @@ struct URLParameterEncoding: ParameterEncoding {
         }
     }
 
-    enum BoolEncoding {
+    public enum BoolEncoding {
         case numeric
         case literal
 
@@ -61,7 +61,7 @@ struct URLParameterEncoding: ParameterEncoding {
     let arrayEncoding: ArrayEncoding
     let boolEncoding: BoolEncoding
 
-    init(
+    public init(
         destination: Destination = .methodDependent,
         arrayEncoding: ArrayEncoding = .brackets,
         boolEncoding: BoolEncoding = .numeric
@@ -71,7 +71,7 @@ struct URLParameterEncoding: ParameterEncoding {
         self.boolEncoding = boolEncoding
     }
 
-    func encode(_ request: URLRequest, with parameters: [String: Any]?) throws -> URLRequest {
+    public func encode(_ request: URLRequest, with parameters: [String: Any]?) throws -> URLRequest {
         guard let parameters = parameters else { return request }
 
         var modifiedRequest: URLRequest = request
@@ -98,7 +98,7 @@ struct URLParameterEncoding: ParameterEncoding {
         return modifiedRequest
     }
 
-    func queryComponents(fromKey key: String, value: Any) -> [(String, String)] {
+    private func queryComponents(fromKey key: String, value: Any) -> [(String, String)] {
         var components: [(String, String)] = []
 
         if let dictionary = value as? [String: Any] {
@@ -124,11 +124,11 @@ struct URLParameterEncoding: ParameterEncoding {
         return components
     }
 
-    func escape(_ string: String) -> String {
+    private func escape(_ string: String) -> String {
         return string.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowedRfc3986) ?? string
     }
 
-    func query(_ parameters: [String: Any]) -> String {
+    private func query(_ parameters: [String: Any]) -> String {
         var components: [(String, String)] = []
 
         for key in parameters.keys.sorted(by: <) {
