@@ -1,6 +1,6 @@
 //  Copyright © 2020 Andreas Link. All rights reserved.
 
-import UIKit
+import Foundation
 
 internal enum NetworkRequestHeaderFactory {
     static func makeHeaders(for method: HttpMethod) -> [HttpHeaderField: String] {
