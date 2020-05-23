@@ -3,7 +3,8 @@
 import Foundation
 
 public protocol NetworkTarget {
-    var baseURL: URL { get }
+    var baseUrl: String { get }
+    var usedPlugins: [NetworkPluginType] { get }
     var requestTimeoutInterval: TimeInterval { get }
     var path: String { get }
     var method: HttpMethod { get }
@@ -12,6 +13,16 @@ public protocol NetworkTarget {
 }
 
 public extension NetworkTarget {
+    var baseURL: URL {
+        guard let url = URL(string: baseUrl) else {
+            fatalError("Please ensure to provide a valid base url.")
+        }
+
+        return url
+    }
+
+    var usedPlugins: [NetworkPluginType] { [.universal] }
+
     var headers: [HttpHeaderField: String] {
         return NetworkRequestHeaderFactory.makeHeaders(for: method)
     }
