@@ -60,7 +60,7 @@ extension NetworkPluginManager {
 
         nextTask.plugin.prepare(request, target: target).sink { [unowned self] request in
             let remainingTasks: [Task] = [Task](tasks.dropFirst())
-            self.runNextTaskIfNeeded(request: request, target: target, tasks: remainingTasks, completion: completion)
+            self.executeNextTaskIfNeeded(request: request, target: target, tasks: remainingTasks, completion: completion)
         }.store(in: &cancellables)
     }
 }
