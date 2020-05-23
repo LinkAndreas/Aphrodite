@@ -4,7 +4,12 @@ import Combine
 import Foundation
 
 final public class Aphrodite<F: AphroditeDomainErrorFactory> {
-    public init() { /* Public initializer */ }
+    private var pluginManager: NetworkPluginManager
+    private var cancellables: Set<AnyCancellable> = .init()
+
+    public init(plugins: [NetworkPluginType: [NetworkPlugin]] = [:]) {
+        self.pluginManager = .init(plugins: plugins)
+    }
 
     public func call<T: NetworkTarget>(_ target: T) -> AnyPublisher<Void, F.AphroditeDomainError> {
         return makeAndExecuteRequest(for: target)
@@ -34,11 +39,11 @@ final public class Aphrodite<F: AphroditeDomainErrorFactory> {
                     NSLog("Couldn't decode model of type \(typeDescription), with error: \(error)")
                     throw error
                 }
-            }
-            .mapError(AphroditeErrorFactory.make)
-            .mapError(F.make)
-            .map(mapper)
-            .eraseToAnyPublisher()
+        }
+        .mapError(AphroditeErrorFactory.make)
+        .mapError(F.make)
+        .map(mapper)
+        .eraseToAnyPublisher()
     }
 }
 
@@ -59,7 +64,11 @@ extension Aphrodite {
         _ request: URLRequest,
         for target: NetworkTarget
     ) -> AnyPublisher<NetworkResponse, AphroditeError> {
-        return URLSession.shared.dataTaskPublisher(for: request)
+        return pluginManager.prepare(request, target: target)
+            .handleEvents(receiveOutput: { self.pluginManager.willSend($0, target: target) })
+            .setFailureType(to: URLError.self)
+            .flatMap({ URLSession.shared.dataTaskPublisher(for: $0) })
+            .eraseToAnyPublisher()
             .tryMap { data, response in
                 guard let httpUrlResponse = response as? HTTPURLResponse else { throw AphroditeError.unexpected }
 
@@ -72,6 +81,10 @@ extension Aphrodite {
                 return networkResponse
             }
             .mapError(AphroditeErrorFactory.make)
+            .handleEvents(
+                receiveOutput: { self.pluginManager.didReceive(.success($0), target: target) },
+                receiveCancel: { self.pluginManager.didReceive(.failure(.serviceCancelled), target: target) }
+            )
             .eraseToAnyPublisher()
     }
 }
