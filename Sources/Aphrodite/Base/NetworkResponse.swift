@@ -2,7 +2,7 @@
 
 import Foundation
 
-internal struct NetworkResponse: Equatable {
+public struct NetworkResponse: Equatable {
     var httpUrlResponse: HTTPURLResponse
     var data: Data
 

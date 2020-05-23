@@ -5,9 +5,9 @@ import Foundation
 internal extension URL {
     init(target: NetworkTarget) {
         if target.path.isEmpty {
-            self = target.backend.baseURL
+            self = target.baseURL
         } else {
-            self = target.backend.baseURL.appendingPathComponent(target.path)
+            self = target.baseURL.appendingPathComponent(target.path)
         }
     }
 }
