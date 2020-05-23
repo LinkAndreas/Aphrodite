@@ -3,7 +3,7 @@
 import Foundation
 
 public protocol NetworkTarget {
-    var baseURL: URL { get }
+    var backend: Backend { get }
     var requestTimeoutInterval: TimeInterval { get }
     var path: String { get }
     var method: HttpMethod { get }
