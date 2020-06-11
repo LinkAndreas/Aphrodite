@@ -2,9 +2,10 @@
 
 import Foundation
 
-public struct NetworkResponse: Equatable {
+public struct NetworkResponse {
     var httpUrlResponse: HTTPURLResponse
     var data: Data
+    var error: AphroditeError?
 
     var statusCode: Int { return httpUrlResponse.statusCode }
     var headerFields: [AnyHashable: Any] { return httpUrlResponse.allHeaderFields }
