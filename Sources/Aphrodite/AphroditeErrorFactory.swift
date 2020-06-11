@@ -3,23 +3,23 @@
 import Foundation
 
 internal enum AphroditeErrorFactory {
-    static func make(from httpUrlResponse: HTTPURLResponse) -> AphroditeError? {
+    static func make(from httpUrlResponse: HTTPURLResponse, data: Data) -> AphroditeError? {
         let statusCode: Int = httpUrlResponse.statusCode
         switch statusCode {
         case 401:
-            return AphroditeError.unauthorized(httpUrlResponse)
+            return AphroditeError.unauthorized(httpUrlResponse, data)
 
         case 403:
-            return AphroditeError.forbidden(httpUrlResponse)
+            return AphroditeError.forbidden(httpUrlResponse, data)
 
         case 404:
-            return AphroditeError.notFound(httpUrlResponse)
+            return AphroditeError.notFound(httpUrlResponse, data)
 
         case 405 ..< 500:
-            return AphroditeError.client(httpUrlResponse, statusCode)
+            return AphroditeError.client(httpUrlResponse, data, statusCode)
 
         case 500 ..< 600:
-            return AphroditeError.server(httpUrlResponse, statusCode)
+            return AphroditeError.server(httpUrlResponse, data, statusCode)
 
         default:
             return nil
@@ -29,10 +29,6 @@ internal enum AphroditeErrorFactory {
     static func make(from error: Error) -> AphroditeError {
         if let apiError = error as? AphroditeError {
             return apiError
-        }
-
-        if let decodingError: DecodingError = error as? DecodingError {
-            return AphroditeError.decoding(decodingError)
         }
 
         if let encodingError: EncodingError = error as? EncodingError {
