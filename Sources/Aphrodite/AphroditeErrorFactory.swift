@@ -3,23 +3,23 @@
 import Foundation
 
 internal enum AphroditeErrorFactory {
-    static func make(from response: NetworkResponse) -> AphroditeError? {
-        let statusCode: Int = response.httpUrlResponse.statusCode
+    static func make(from httpUrlResponse: HTTPURLResponse) -> AphroditeError? {
+        let statusCode: Int = httpUrlResponse.statusCode
         switch statusCode {
         case 401:
-            return AphroditeError.unauthorized(response.httpUrlResponse)
+            return AphroditeError.unauthorized(httpUrlResponse)
 
         case 403:
-            return AphroditeError.forbidden(response.httpUrlResponse)
+            return AphroditeError.forbidden(httpUrlResponse)
 
         case 404:
-            return AphroditeError.notFound(response.httpUrlResponse)
+            return AphroditeError.notFound(httpUrlResponse)
 
         case 405 ..< 500:
-            return AphroditeError.client(response.httpUrlResponse, statusCode)
+            return AphroditeError.client(httpUrlResponse, statusCode)
 
         case 500 ..< 600:
-            return AphroditeError.server(response.httpUrlResponse, statusCode)
+            return AphroditeError.server(httpUrlResponse, statusCode)
 
         default:
             return nil
@@ -39,15 +39,19 @@ internal enum AphroditeErrorFactory {
             return AphroditeError.encoding(encodingError)
         }
 
-        switch error as? URLError {
-        case let urlError? where urlError.code == .cancelled:
-            return .serviceCancelled
+        if let urlError: URLError = error as? URLError {
+            switch urlError.code {
+            case .cancelled:
+                return .serviceCancelled
 
-        case let urlError? where urlError.code == .notConnectedToInternet:
-            return .notConnectedToInternet
+            case .notConnectedToInternet:
+                return .notConnectedToInternet
 
-        default:
-            return .unexpected
+            default:
+                return .unexpected
+            }
         }
+
+        return .unexpected
     }
 }
