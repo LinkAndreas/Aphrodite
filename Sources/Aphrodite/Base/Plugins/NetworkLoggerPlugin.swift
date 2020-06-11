@@ -31,10 +31,12 @@ public final class NetworkLoggerPlugin: NetworkPlugin {
     }
 
     public func didReceive(_ result: Result<NetworkResponse, AphroditeError>, target: NetworkTarget) {
-        if case .success(let response) = result {
-            output(logNetworkResponse(response.httpUrlResponse, data: response.data, target: target))
-        } else {
-            output(logNetworkResponse(nil, data: nil, target: target))
+        switch result {
+        case let .success(response):
+            output(logNetworkResponse(response, target: target))
+
+        case let .failure(error):
+            output("Response: Error occured \(error) when receiving response for \(target).")
         }
     }
 
@@ -70,16 +72,13 @@ extension NetworkLoggerPlugin {
         return format(context: .request, body: output.joined(separator: "\n"))
     }
 
-    private func logNetworkResponse(_ response: HTTPURLResponse?, data: Data?, target: NetworkTarget) -> String {
+    private func logNetworkResponse(_ response: NetworkResponse, target: NetworkTarget) -> String {
         let output: [String] = {
-            guard let response = response else {
-                return ["Response: Received empty network response for \(target)."]
-            }
-
             var result: [String] = []
-            result += ["Response: \(response.description)"]
-            format(data: data).flatMap { result += ["Body: \($0)"] }
-
+            result += ["Response: \(response.httpUrlResponse.description)"]
+            format(data: response.data).flatMap { result += ["Body: \($0)"] }
+            response.error.map { result += ["Error: \($0.description)"] }
+            
             return result
         }()
 

@@ -67,18 +67,12 @@ extension Aphrodite {
         return pluginManager.prepare(request, target: target)
             .handleEvents(receiveOutput: { self.pluginManager.willSend($0, target: target) })
             .setFailureType(to: URLError.self)
-            .flatMap({ URLSession.shared.dataTaskPublisher(for: $0) })
-            .eraseToAnyPublisher()
+            .flatMap(URLSession.shared.dataTaskPublisher)
             .tryMap { data, response in
                 guard let httpUrlResponse = response as? HTTPURLResponse else { throw AphroditeError.unexpected }
 
-                let networkResponse: NetworkResponse = .init(httpUrlResponse: httpUrlResponse, data: data)
-
-                if let apiError = AphroditeErrorFactory.make(from: networkResponse) {
-                    throw apiError
-                }
-
-                return networkResponse
+                let error: AphroditeError? = AphroditeErrorFactory.make(from: httpUrlResponse)
+                return .init(httpUrlResponse: httpUrlResponse, data: data, error: error)
             }
             .mapError(AphroditeErrorFactory.make)
             .handleEvents(
