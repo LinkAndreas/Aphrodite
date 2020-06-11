@@ -34,3 +34,32 @@ public enum AphroditeError: Error {
         }
     }
 }
+
+extension AphroditeError: CustomStringConvertible {
+    public var description: String {
+        switch self {
+        case .unauthorized:
+            return "unauthorized"
+        case .notFound:
+            return "notFound"
+        case .forbidden:
+            return "forbidden"
+        case .underlying:
+            return "underlying"
+        case .client:
+            return "client"
+        case .server:
+            return "server"
+        case .decoding:
+            return "decoding"
+        case .encoding:
+            return "encoding"
+        case .serviceCancelled:
+            return "serviceCancelled"
+        case .notConnectedToInternet:
+            return "notConnectedToInternet"
+        case .unexpected:
+            return "unexpected"
+        }
+    }
+}
