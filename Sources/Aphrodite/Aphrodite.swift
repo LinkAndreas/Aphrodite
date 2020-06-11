@@ -30,14 +30,17 @@ final public class Aphrodite<F: AphroditeDomainErrorFactory> {
         mapper: @escaping (Entity) -> Model
     ) -> AnyPublisher<Model, F.AphroditeDomainError> {
         return makeAndExecuteRequest(for: target)
-            .map { $0.data }
-            .tryMap { data in
+            .tryMap { response in
                 do {
-                    return try JSONDecoder.default.decode(Entity.self, from: data)
+                    return try JSONDecoder.default.decode(Entity.self, from: response.data)
                 } catch {
                     let typeDescription: String = .init(describing: Entity.self)
                     NSLog("Couldn't decode model of type \(typeDescription), with error: \(error)")
-                    throw error
+                    if let decodingError: DecodingError = error as? DecodingError {
+                        throw AphroditeError.decoding(response.httpUrlResponse, response.data, decodingError)
+                    } else {
+                        throw error
+                    }
                 }
         }
         .mapError(AphroditeErrorFactory.make)
@@ -71,8 +74,7 @@ extension Aphrodite {
             .tryMap { data, response in
                 guard let httpUrlResponse = response as? HTTPURLResponse else { throw AphroditeError.unexpected }
 
-                let error: AphroditeError? = AphroditeErrorFactory.make(from: httpUrlResponse)
-                return .init(httpUrlResponse: httpUrlResponse, data: data, error: error)
+                return .init(httpUrlResponse: httpUrlResponse, data: data)
             }
             .mapError(AphroditeErrorFactory.make)
             .handleEvents(
