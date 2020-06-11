@@ -83,6 +83,11 @@ extension Aphrodite {
             .mapError(AphroditeErrorFactory.make)
             .handleEvents(
                 receiveOutput: { self.pluginManager.didReceive(.success($0), target: target) },
+                receiveCompletion: { completion in
+                    guard case let .failure(error) = completion else { return }
+
+                    self.pluginManager.didReceive(.failure(error), target: target)
+                },
                 receiveCancel: { self.pluginManager.didReceive(.failure(.serviceCancelled), target: target) }
             )
             .eraseToAnyPublisher()
