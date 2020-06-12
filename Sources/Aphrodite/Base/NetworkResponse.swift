@@ -5,7 +5,6 @@ import Foundation
 public struct NetworkResponse {
     var httpUrlResponse: HTTPURLResponse
     var data: Data
-    var error: AphroditeError?
 
     var statusCode: Int { return httpUrlResponse.statusCode }
     var headerFields: [AnyHashable: Any] { return httpUrlResponse.allHeaderFields }
@@ -13,6 +12,5 @@ public struct NetworkResponse {
     init(httpUrlResponse: HTTPURLResponse, data: Data) {
         self.httpUrlResponse = httpUrlResponse
         self.data = data
-        self.error = AphroditeErrorFactory.make(from: httpUrlResponse, data: data)
     }
 }
