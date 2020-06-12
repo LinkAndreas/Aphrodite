@@ -77,7 +77,6 @@ extension NetworkLoggerPlugin {
             var result: [String] = []
             result += ["Response: \(response.httpUrlResponse.description)"]
             format(data: response.data).flatMap { result += ["Body: \($0)"] }
-            response.error.map { result += ["Error: \($0.description)"] }
             
             return result
         }()
