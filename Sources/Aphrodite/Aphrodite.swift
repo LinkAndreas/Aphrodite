@@ -14,14 +14,14 @@ final public class Aphrodite<F: AphroditeDomainErrorFactory> {
     public func call<T: NetworkTarget>(_ target: T) -> AnyPublisher<Void, F.AphroditeDomainError> {
         return makeAndExecuteRequest(for: target)
             .map { _ in () }
-            .mapError { F.make(from: $0, and: target) }
+            .mapError(F.make)
             .eraseToAnyPublisher()
     }
 
     public func call<T: NetworkTarget>(_ target: T) -> AnyPublisher<Data, F.AphroditeDomainError> {
         return makeAndExecuteRequest(for: target)
             .map { $0.data }
-            .mapError { F.make(from: $0, and: target) }
+            .mapError(F.make)
             .eraseToAnyPublisher()
     }
 
@@ -44,7 +44,7 @@ final public class Aphrodite<F: AphroditeDomainErrorFactory> {
                 }
         }
         .mapError(AphroditeErrorFactory.make)
-        .mapError { F.make(from: $0, and: target) }
+        .mapError(F.make)
         .map(mapper)
         .eraseToAnyPublisher()
     }
