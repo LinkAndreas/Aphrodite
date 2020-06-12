@@ -5,5 +5,5 @@ import Foundation
 public protocol AphroditeDomainErrorFactory {
     associatedtype AphroditeDomainError: Error
 
-    static func make(from error: AphroditeError, and target: NetworkTarget) -> AphroditeDomainError
+    static func make(from error: AphroditeError) -> AphroditeDomainError
 }
