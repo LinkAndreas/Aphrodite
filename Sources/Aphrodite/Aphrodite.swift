@@ -94,6 +94,7 @@ extension Aphrodite {
         for target: NetworkTarget
     ) -> AnyPublisher<Result<NetworkResponse, AphroditeError>, Never> {
         return pluginManager.prepare(request, target: target)
+            .receive(on: RunLoop.main)
             .handleEvents(receiveOutput: { self.pluginManager.willSend($0, target: target) })
             .setFailureType(to: URLError.self)
             .flatMap(URLSession.shared.dataTaskPublisher)
@@ -109,6 +110,7 @@ extension Aphrodite {
             }
             .mapError(AphroditeErrorFactory.make)
             .catch { Just(.failure($0))}
+            .receive(on: RunLoop.main)
             .handleEvents(
                 receiveOutput: { self.pluginManager.didReceive($0, target: target) },
                 receiveCancel: { self.pluginManager.didReceive(.failure(.serviceCancelled), target: target) }
