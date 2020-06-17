@@ -3,13 +3,13 @@
 import Foundation
 
 public struct NetworkResponse {
-    var httpUrlResponse: HTTPURLResponse
-    var data: Data
+    public var httpUrlResponse: HTTPURLResponse
+    public var data: Data
 
-    var statusCode: Int { return httpUrlResponse.statusCode }
-    var headerFields: [AnyHashable: Any] { return httpUrlResponse.allHeaderFields }
+    public var statusCode: Int { return httpUrlResponse.statusCode }
+    public var headerFields: [AnyHashable: Any] { return httpUrlResponse.allHeaderFields }
 
-    init(httpUrlResponse: HTTPURLResponse, data: Data) {
+    public init(httpUrlResponse: HTTPURLResponse, data: Data) {
         self.httpUrlResponse = httpUrlResponse
         self.data = data
     }
