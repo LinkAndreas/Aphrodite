@@ -11,7 +11,3 @@ public struct NetworkPluginType: RawRepresentable, Equatable, Hashable {
         self.rawValue = rawValue
     }
 }
-
-public extension NetworkPluginType {
-    static let universal: NetworkPluginType = .init(identifier: "universal")
-}
