@@ -10,13 +10,13 @@ internal enum URLRequestFactory {
         request.timeoutInterval = target.requestTimeoutInterval
 
         switch target.task {
-        case .requestPlain:
+        case .plainRequest:
             break
 
-        case let .requestData(data):
+        case let .requestWithData(data):
             request.httpBody = data
 
-        case let .requestParameters(parameters: parameters, encoding: encoding):
+        case let .requestWithParameters(parameters: parameters, encoding: encoding):
             do {
                 request = try encoding.encode(request, with: parameters)
             } catch {

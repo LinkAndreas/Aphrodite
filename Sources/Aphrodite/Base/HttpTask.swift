@@ -3,7 +3,7 @@
 import Foundation
 
 public enum HttpTask {
-    case requestPlain
-    case requestData(Data)
-    case requestParameters(parameters: [String: Any], encoding: ParameterEncoding)
+    case plainRequest
+    case requestWithData(Data)
+    case requestWithParameters(parameters: [String: Any], encoding: ParameterEncoding)
 }
