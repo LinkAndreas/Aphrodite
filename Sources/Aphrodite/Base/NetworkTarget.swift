@@ -14,9 +14,7 @@ public protocol NetworkTarget {
 
 public extension NetworkTarget {
     var baseURL: URL {
-        guard let url = URL(string: baseUrl) else {
-            fatalError("Please ensure to provide a valid base url.")
-        }
+        guard let url = URL(string: baseUrl) else { fatalError("Please ensure to provide a valid base url.") }
 
         return url
     }

@@ -6,8 +6,8 @@ public struct NetworkResponse {
     public var httpUrlResponse: HTTPURLResponse
     public var data: Data
 
-    public var statusCode: Int { return httpUrlResponse.statusCode }
-    public var headerFields: [AnyHashable: Any] { return httpUrlResponse.allHeaderFields }
+    public var statusCode: Int { httpUrlResponse.statusCode }
+    public var headerFields: [AnyHashable: Any] { httpUrlResponse.allHeaderFields }
 
     public init(httpUrlResponse: HTTPURLResponse, data: Data) {
         self.httpUrlResponse = httpUrlResponse

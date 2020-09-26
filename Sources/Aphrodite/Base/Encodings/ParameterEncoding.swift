@@ -2,7 +2,7 @@
 
 import Foundation
 
-// Reference: https://github.com/Alamofire/Alamofire/blob/master/Source/ParameterEncoding.swift
+// Adapted from: https://github.com/Alamofire/Alamofire/blob/master/Source/ParameterEncoding.swift
 public protocol ParameterEncoding {
     func encode(_ urlRequest: URLRequest, with parameters: [String: Any]?) throws -> URLRequest
 }

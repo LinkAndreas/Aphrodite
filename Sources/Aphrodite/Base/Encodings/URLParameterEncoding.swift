@@ -2,7 +2,7 @@
 
 import Foundation
 
-// Reference: https://github.com/Alamofire/Alamofire/blob/master/Source/ParameterEncoding.swift
+// Adapted from: https://github.com/Alamofire/Alamofire/blob/master/Source/ParameterEncoding.swift
 public struct URLParameterEncoding: ParameterEncoding {
     public enum Destination {
         case methodDependent

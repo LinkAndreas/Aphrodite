@@ -20,9 +20,7 @@ internal enum URLRequestFactory {
             do {
                 request = try encoding.encode(request, with: parameters)
             } catch {
-                guard let encodingError = error as? EncodingError else {
-                    return .failure(.unexpected)
-                }
+                guard let encodingError = error as? EncodingError else { return .failure(.unexpected) }
 
                 return .failure(.encoding(encodingError))
             }

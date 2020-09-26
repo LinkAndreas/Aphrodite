@@ -2,7 +2,7 @@
 
 import Foundation
 
-// Reference: https://github.com/Alamofire/Alamofire/blob/master/Source/ParameterEncoding.swift
+// Adapted from: https://github.com/Alamofire/Alamofire/blob/master/Source/ParameterEncoding.swift
 public struct JSONParameterEncoding: ParameterEncoding {
     public static let `default`: JSONParameterEncoding = .init()
     public static let prettyPrinted: JSONParameterEncoding = .init(options: .prettyPrinted)
