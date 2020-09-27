@@ -28,7 +28,7 @@ final public class Aphrodite<DomainErrorFactory: AphroditeDomainErrorFactory> {
      - Parameter target: The network target to be called.
      - Returns: A publisher that wraps the network request for the given target.
      */
-    public func request<T: NetworkTarget>(_ target: T) -> AnyPublisher<Void, DomainErrorFactory.AphroditeDomainError> {
+    public func request<T: NetworkTarget>(_ target: T) -> AnyPublisher<Void, DomainErrorFactory.DomainError> {
         return makeAndExecuteRequest(for: target)
             .tryMap { result in
                 switch result {
@@ -54,7 +54,7 @@ final public class Aphrodite<DomainErrorFactory: AphroditeDomainErrorFactory> {
     */
     public func requestData<T: NetworkTarget>(
         _ target: T
-    ) -> AnyPublisher<Data, DomainErrorFactory.AphroditeDomainError> {
+    ) -> AnyPublisher<Data, DomainErrorFactory.DomainError> {
         return makeAndExecuteRequest(for: target)
             .tryMap { result in
                 switch result {
@@ -80,7 +80,7 @@ final public class Aphrodite<DomainErrorFactory: AphroditeDomainErrorFactory> {
     */
     public func requestModel<T: NetworkTarget, Model: Decodable>(
         _ target: T
-    ) -> AnyPublisher<Model, DomainErrorFactory.AphroditeDomainError> {
+    ) -> AnyPublisher<Model, DomainErrorFactory.DomainError> {
         let identity: (Model) -> Model = { $0 }
 
         return requestMappedModel(target, mapper: identity)
@@ -99,7 +99,7 @@ final public class Aphrodite<DomainErrorFactory: AphroditeDomainErrorFactory> {
     public func requestMappedModel<T: NetworkTarget, Entity: Decodable, Model>(
         _ target: T,
         mapper: @escaping (Entity) -> Model
-    ) -> AnyPublisher<Model, DomainErrorFactory.AphroditeDomainError> {
+    ) -> AnyPublisher<Model, DomainErrorFactory.DomainError> {
         return makeAndExecuteRequest(for: target)
             .tryMap { result in
                 switch result {
