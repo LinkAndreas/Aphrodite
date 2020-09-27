@@ -2,7 +2,13 @@
 
 import Foundation
 
+/// JSONDecoder extensions
 internal extension JSONDecoder {
+    /**
+    The default `JSONDecoder`.
+
+    The default instance decodes data with `.base64` as well as dates in milliseconds.
+    */
     static let `default`: JSONDecoder = {
         let decoder = JSONDecoder()
         decoder.dataDecodingStrategy = .base64

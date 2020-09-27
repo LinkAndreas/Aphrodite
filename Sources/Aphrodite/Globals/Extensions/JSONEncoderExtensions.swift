@@ -2,7 +2,13 @@
 
 import Foundation
 
+/// JSONEncoder extensions
 internal extension JSONEncoder {
+    /**
+     The default `JSONEncoder`.
+
+     The default instance encodes data with `.base64` as well as dates in milliseconds.
+     */
     static let `default`: JSONEncoder = {
         let encoder = JSONEncoder()
         encoder.dataEncodingStrategy = .base64
