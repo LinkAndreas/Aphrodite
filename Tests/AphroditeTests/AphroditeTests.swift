@@ -34,7 +34,7 @@ enum MockTarget: NetworkTarget {
         }
     }
 
-    var task: HttpTask {
+    var requestType: HttpRequestType {
         switch self {
         case .mockEndpoint:
             return .plainRequest

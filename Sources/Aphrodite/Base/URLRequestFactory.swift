@@ -18,7 +18,7 @@ internal enum URLRequestFactory {
         request.allHTTPHeaderFields = target.headers.rawRepresentation
         request.timeoutInterval = target.requestTimeoutInterval
 
-        switch target.task {
+        switch target.requestType {
         case .plainRequest:
             break
 

@@ -14,8 +14,8 @@ public protocol NetworkTarget {
     var path: String { get }
     /// The `HttpMethod` to use for this target, e.g., `delete`, `get`, `post` or `put`.
     var method: HttpMethod { get }
-    /// The task to perform for this target, e.g., `plainRequest`, `requestWithData` or `requestWithParameters`.
-    var task: HttpTask { get }
+    /// The requestType for this target, e.g., `plainRequest`, `requestWithData` or `requestWithParameters`.
+    var requestType: HttpRequestType { get }
     /// The headers that are included for this target.
     var headers: [HttpHeaderField: String] { get }
 }
