@@ -16,7 +16,7 @@ final public class Aphrodite<DomainErrorFactory: AphroditeDomainErrorFactory> {
      - Parameter plugins: The network plugins that be executed during request preparation as well as response reception
      - Returns: A generic network client using the given plugins.
      */
-    public init(plugins: [NetworkPluginType: [NetworkPlugin]] = [:]) {
+    public init(plugins: [NetworkPlugin] = []) {
         self.pluginManager = .init(plugins: plugins)
     }
 

@@ -6,8 +6,8 @@ import Foundation
 public protocol NetworkTarget {
     /// The `baseUrl` of the target.
     var baseUrl: String { get }
-    /// The nework plugin types that are used by the target.
-    var usedPlugins: [NetworkPluginType] { get }
+    /// The scope of the target.
+    var scope: [NetworkPluginTargetScope] { get }
     /// The maximum time interval until a network request for this target times out.
     var requestTimeoutInterval: TimeInterval { get }
     /// The path for this target. Combined with the `baseUrl` the `path` forms the endpoint's `url`
@@ -20,7 +20,7 @@ public protocol NetworkTarget {
     var headers: [HttpHeaderField: String] { get }
 }
 
-/// NetworkTarget extensions
+/// NetworkTarget default implementations
 public extension NetworkTarget {
     var baseURL: URL {
         guard let url = URL(string: baseUrl) else { fatalError("Please ensure to provide a valid base url.") }
@@ -28,7 +28,7 @@ public extension NetworkTarget {
         return url
     }
 
-    var usedPlugins: [NetworkPluginType] { [.universal] }
+    var scope: [NetworkPluginTargetScope] { [.universal] }
 
     var headers: [HttpHeaderField: String] {
         return NetworkRequestHeaderFactory.makeHeaders(for: method)
