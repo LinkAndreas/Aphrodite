@@ -3,8 +3,11 @@
 import Foundation
 
 internal extension CharacterSet {
-    /// Creates a CharacterSet from RFC 3986 allowed characters.
-    /// Reference: https://github.com/Alamofire/Alamofire/blob/master/Source/URLEncodedFormEncoder.swift
+    /**
+     The `CharacterSet` only including characters that are allowed in RFC 3986.
+
+     - Note: Adapted from: https://github.com/Alamofire/Alamofire/blob/master/Source/URLEncodedFormEncoder.swift
+     */
     static let urlQueryAllowedRfc3986: CharacterSet = {
         let generalDelimitersToEncode = ":#[]@"
         let subDelimitersToEncode = "!$&'()*+,;="

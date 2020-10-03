@@ -1,3 +1,3 @@
 # Aphrodite
 
-A description of this package.
+A generic network abstraction build on top of NSURLSession and Combine

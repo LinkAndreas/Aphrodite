@@ -2,6 +2,8 @@
 
 import Foundation
 
+/// NSNumber Extensions
 internal extension NSNumber {
-    var isBool: Bool { return CFBooleanGetTypeID() == CFGetTypeID(self) }
+    /// Indicates whether the underlying type is boolean.
+    var isBool: Bool { CFBooleanGetTypeID() == CFGetTypeID(self) }
 }

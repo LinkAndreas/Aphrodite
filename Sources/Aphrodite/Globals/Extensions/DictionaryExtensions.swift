@@ -2,8 +2,9 @@
 
 import Foundation
 
+/// Dictionary extensions
 internal extension Dictionary where Key == HttpHeaderField, Value == String {
-    /// - Returns: string representation of the http header fields
+    /// String representation of the http header fields
     var rawRepresentation: [String: String] {
         var result: [String: String] = [:]
         forEach { key, value in
