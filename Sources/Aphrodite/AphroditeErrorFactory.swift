@@ -3,6 +3,14 @@
 import Foundation
 
 internal enum AphroditeErrorFactory {
+    /**
+     Produces an `AphroditeError` for a given `HTTPURLResponse`and response data if possible
+
+     - Parameters:
+      - httpUrlResponse: The network target to be called.
+      - data: The response data
+     - Returns: An `AphroditeError` if the given `HTTPURLResponse` indicates an error.
+    */
     static func make(from httpUrlResponse: HTTPURLResponse, data: Data) -> AphroditeError? {
         let statusCode: Int = httpUrlResponse.statusCode
         switch statusCode {
@@ -26,6 +34,14 @@ internal enum AphroditeErrorFactory {
         }
     }
 
+    /**
+    Produces an `AphroditeError` given an arbitrary `Error`.
+
+     All unknown errors are mapped to `unexpected`.
+
+    - Parameter error: An arbitrary error
+    - Returns: The `AphroditeError` created for the given `Error`
+    */
     static func make(from error: Error) -> AphroditeError {
         if let apiError = error as? AphroditeError {
             return apiError
