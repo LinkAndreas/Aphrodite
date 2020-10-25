@@ -3,7 +3,7 @@
 import Foundation
 
 /// JSONEncoder extensions
-internal extension JSONEncoder {
+public extension JSONEncoder {
     /**
      The default `JSONEncoder`.
 
