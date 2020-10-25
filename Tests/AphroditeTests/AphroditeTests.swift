@@ -59,9 +59,10 @@ enum MapperMock {
 final class AphroditeTests: XCTestCase {
     private var cancellables: Set<AnyCancellable> = []
 
+    private let API: Aphrodite<MockDomainErrorFactory> = .init()
+
     func testRequest() {
-        let client: Aphrodite<MockDomainErrorFactory> = .init()
-        client
+        API
             .request(MockTarget.mockEndpoint)
             .sink(
                 receiveCompletion: { _ in }, 
@@ -71,8 +72,7 @@ final class AphroditeTests: XCTestCase {
     }
 
     func testRequestData() {
-        let client: Aphrodite<MockDomainErrorFactory> = .init()
-        client
+        API
             .requestData(MockTarget.mockEndpoint)
             .sink(
                 receiveCompletion: { _ in },
@@ -82,8 +82,7 @@ final class AphroditeTests: XCTestCase {
     }
 
     func testRequestModel() {
-        let client: Aphrodite<MockDomainErrorFactory> = .init()
-        client
+        API
             .requestModel(MockTarget.mockEndpoint)
             .sink(
                 receiveCompletion: { completion in
@@ -101,8 +100,7 @@ final class AphroditeTests: XCTestCase {
     }
 
     func testRequestMappedModel() {
-        let client: Aphrodite<MockDomainErrorFactory> = .init()
-        client
+        API
             .requestMappedModel(MockTarget.mockEndpoint, mapper: MapperMock.map)
             .sink(
                 receiveCompletion: { _ in },
