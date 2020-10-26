@@ -48,7 +48,7 @@ Installation via [SwiftPM](https://swift.org/package-manager/) is supported.
 
 ## Motivation
 
-Managing network requests in an app is complex and quickly results into cluttered code that is highly repetitive. In addition, data that is provided by the network layer, i.e., entities, often require additional processing before they are suitable for the application's domain. When no distinction is made, developers tend to rely on in-line data conversions that clutter the code and make it less readable. _Aphrodite_ mitigates these issues by providing a rich set of generic requests that encapsulate the repetitive behavior and allow a clear distinction between the data representation that is sent over the network, i.e., entities, as well as the representation that is used in the application's domain, i.e., domain models. _Aphrodite_ is inspired by _Moya_ ([Link](https://github.com/Moya/Moya)) and uses Apple's own URL Loading System (`NSURLRequest`) as well as `Combine`.   
+Managing network requests in an app is complex and quickly results into cluttered code that is highly repetitive. In addition, data that is provided by the network layer, i.e., entities, often require additional processing before they are suitable for the application's domain. When no distinction is made, developers tend to rely on in-line data conversions that clutter the code and make it less readable. _Aphrodite_ mitigates these issues by providing a rich set of generic requests that encapsulate the repetitive behavior and allow a clear distinction between the data representation that is sent over the network, i.e., entities, as well as the representation that is used in the application's domain, i.e., domain models. _Aphrodite_ is inspired by _Moya_ ([Link](https://github.com/Moya/Moya)) and _Alamofire_ ([Link](https://github.com/Alamofire/Alamofire)) and uses Apple's own URL Loading System (`NSURLRequest`) as well as `Combine`.   
 
 ## Structure
 
@@ -296,7 +296,7 @@ client
 
 ### Sending Data over the network
 
-In addition to data retrieval, _Aphrodite_ supports multiple ways to attach data to network requests. While data can be sent as raw data without modification, it can also be attached as request parameters. The later requires a dedicated parameter encoding that is used to encode data before it is sent over the network. Inspired by _Moya_ ([Link](https://github.com/Moya/Moya)), _Aphrodite_ offers the `URLParameterEncoding` as well as the `JSONParameterEncoding`. In addition, applications can specify their own encoding by conforming to the `ParameterEncoding` protocol:
+In addition to data retrieval, _Aphrodite_ supports multiple ways to attach data to network requests. While data can be sent as raw data without modification, it can also be attached as request parameters. The later requires a dedicated parameter encoding that is used to encode data before it is sent over the network. Inspired by _Alamofire_ ([Link](https://github.com/Alamofire/Alamofire)), _Aphrodite_ offers the `URLParameterEncoding` as well as the `JSONParameterEncoding`. In addition, applications can specify their own encoding by conforming to the `ParameterEncoding` protocol:
 
 ```swift
 public protocol ParameterEncoding {
@@ -383,7 +383,7 @@ The following issues/enhancements can be addressed in future revisions:
 
 ## Credits
 
-The design of this library was inspired by _Moya_ ([Link](https://github.com/Moya/Moya)).
+The design of this library was inspired by _Moya_ ([Link](https://github.com/Moya/Moya)) and _Alamofire_ ([Link](https://github.com/Alamofire/Alamofire)).
 
 ## License
 
