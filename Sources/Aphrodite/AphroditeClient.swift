@@ -4,7 +4,7 @@ import Combine
 import Foundation
 
 /// A generic network client build on top of NSURLSession and Combine
-final public class Aphrodite<DomainErrorFactory: AphroditeDomainErrorFactory> {
+final public class AphroditeClient<DomainErrorFactory: AphroditeDomainErrorFactory> {
     /// The plugin manager used by Aphrodite to intercept the preparation and result of each network call
     private let pluginManager: NetworkPluginManager
     /// A set of references to each cancellable operation
@@ -127,7 +127,7 @@ final public class Aphrodite<DomainErrorFactory: AphroditeDomainErrorFactory> {
     }
 }
 
-extension Aphrodite {
+extension AphroditeClient {
     /**
     Creates a network request for the given target and executes it.
 

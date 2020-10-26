@@ -59,7 +59,7 @@ enum MapperMock {
 final class AphroditeTests: XCTestCase {
     private var cancellables: Set<AnyCancellable> = []
 
-    private let API: Aphrodite<MockDomainErrorFactory> = .init()
+    private let API: AphroditeClient<MockDomainErrorFactory> = .init()
 
     func testRequest() {
         API
