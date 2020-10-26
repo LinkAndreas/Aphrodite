@@ -2,7 +2,6 @@
 
 import Foundation
 
-
 /**
  A `ParameterEncoding` used to encode data as URL parameters.
 
