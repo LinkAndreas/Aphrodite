@@ -5,8 +5,8 @@
 
 <p align="center">
     <a href="https://github.com/LinkAndreas/Aphrodite/releases">
-        <img src="https://img.shields.io/badge/Version-0.3.1-05668D.svg"
-             alt="Version: 0.3.1">
+        <img src="https://img.shields.io/badge/Version-0.3.2-05668D.svg"
+             alt="Version: 0.3.2">
     </a>
     <img src="https://img.shields.io/badge/Swift-5.3-028090.svg"
          alt="Swift: 5.3">
