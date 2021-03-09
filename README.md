@@ -37,7 +37,7 @@ Aphrodite is a lightweight, generic and reactive network layer that is built on 
 
 - Structures endpoints in a consistent way
 - Facilitates entity- and domain model separation
-- Integrates automatic JSON De-/Encoding 
+- Integrates automatic JSON De-/Encoding
 - Supports network plugins with target scopes
 - Offers a rich set of plain-, data-, model- and mappedModel- requests
 - Easily integrates with your iOS, macOS, or tvOS apps
@@ -48,7 +48,7 @@ Installation via [SwiftPM](https://swift.org/package-manager/) is supported.
 
 ## Motivation
 
-Managing network requests in an app is complex and quickly results into cluttered code that is highly repetitive. In addition, data that is provided by the network layer, i.e., entities, often require additional processing before they are suitable for the application's domain. When no distinction is made, developers tend to rely on in-line data conversions that clutter the code and make it less readable. _Aphrodite_ mitigates these issues by providing a rich set of generic requests that encapsulate the repetitive behavior and allow a clear distinction between the data representation that is sent over the network, i.e., entities, as well as the representation that is used in the application's domain, i.e., domain models. _Aphrodite_ is inspired by _Moya_ ([Link](https://github.com/Moya/Moya)) and _Alamofire_ ([Link](https://github.com/Alamofire/Alamofire)) and uses Apple's own URL Loading System (`NSURLRequest`) as well as `Combine`.   
+Managing network requests in an app is complex and quickly results into cluttered code that is highly repetitive. In addition, data that is provided by the network layer, i.e., entities, often require additional processing before they are suitable for the application's domain. When no distinction is made, developers tend to rely on in-line data conversions that clutter the code and make it less readable. _Aphrodite_ mitigates these issues by providing a rich set of generic requests that encapsulate the repetitive behavior and allow a clear distinction between the data representation that is sent over the network, i.e., entities, as well as the representation that is used in the application's domain, i.e., domain models. _Aphrodite_ is inspired by _Moya_ ([Link](https://github.com/Moya/Moya)) and _Alamofire_ ([Link](https://github.com/Alamofire/Alamofire)) and uses Apple's own URL Loading System (`NSURLRequest`) as well as `Combine`.
 
 ## Structure
 
@@ -56,7 +56,7 @@ _Aphrodite_ consists of the following components:
 
 ### Aphrodite Client
 
-The `AphroditeClient` acts as the main interface to the library. All network calls are made using the client. During instantiation, the domain error factory as well as target-specific network plugins are defined. The later are executed for each request matching the plugin's predefined target-scope. 
+The `AphroditeClient` acts as the main interface to the library. All network calls are made using the client. During instantiation, the domain error factory as well as target-specific network plugins are defined. The later are executed for each request matching the plugin's predefined target-scope.
 
 ```swift
 let client: AphroditeClient<DomainErrorFactory> = .init(plugins: [])
@@ -95,6 +95,7 @@ public enum AphroditeError: Error {
 By defining a domain-specific factory, apps decide whether they need more fine-grained control, or whether errors are treated in a similar way. For instance, an app may decide to treat an `underlying` error similarly to an `unexpected` error. You can find an example for a domain-specific factory in the Example App in the [section](###Example-Apps) below.
 
 ### Network Target
+
 _Aphrodite_ organizes endpoints in targets, similar to _Moya_ ([Link](https://github.com/Moya/Moya)). Network targets are defined by conforming to the `NetworkTarget` protocol:
 
 ```swift
@@ -109,7 +110,7 @@ public protocol NetworkTarget {
 }
 ```
 
-While the combination of `path` and `baseUrl` forms the URL of the endpoint, the `scope` defines the set of network plugins that are applied to the target. In contrast, `requestTimeoutInterval` defines the maximum duration, the client should wait for a response. In addition, by specifying the `requestType` the application can decide whether custom data needs to be attached to the request. This way, the application can decide whether the data should be attached as parameter or as encoded data within the requests body. Finally, the `method` corresponds to the Http method that is used with the request, i.e., whether `GET`, `POST`, `PUT` ... is applied. 
+While the combination of `path` and `baseUrl` forms the URL of the endpoint, the `scope` defines the set of network plugins that are applied to the target. In contrast, `requestTimeoutInterval` defines the maximum duration, the client should wait for a response. In addition, by specifying the `requestType` the application can decide whether custom data needs to be attached to the request. This way, the application can decide whether the data should be attached as parameter or as encoded data within the requests body. Finally, the `method` corresponds to the Http method that is used with the request, i.e., whether `GET`, `POST`, `PUT` ... is applied.
 
 Subsequently, an example target named `UserManagement` is given:
 
@@ -185,6 +186,7 @@ client
 ```
 
 #### Data Request
+
 Second, **Data Requests** are appropriate when access to the raw data of the response is required. As an example, the image data for the user associated with user ID `42` is retrieved using the following request:
 
 ```swift
@@ -208,7 +210,8 @@ client
 ```
 
 #### Model Request
-Rather then passing the raw data to the domain, **Model Requests** try to decode the underlying data into the type specified by the `receiveValue` closure in the application's domain. _Aphrodite_ handles the decoding automatically and throws a decoding error if the decoding failed. For instance, consider the following data structure:   
+
+Rather then passing the raw data to the domain, **Model Requests** try to decode the underlying data into the type specified by the `receiveValue` closure in the application's domain. _Aphrodite_ handles the decoding automatically and throws a decoding error if the decoding failed. For instance, consider the following data structure:
 
 ```swift
 struct User {
@@ -241,7 +244,7 @@ client
 
 #### Mapped-Model Request
 
-Finally, **Mapped-Model Requests** facilitate entity- and domain-model separation. To illustrate this distinction, please consider the following example: 
+Finally, **Mapped-Model Requests** facilitate entity- and domain-model separation. To illustrate this distinction, please consider the following example:
 
 ```swift
 struct BuildingEntity {
@@ -264,7 +267,7 @@ enum BuildingModelMapper {
         return .init(
             name: entity.name,
             location: .init(
-                latitude: entity.latitude, 
+                latitude: entity.latitude,
                 longitude: entity.longitude
             )
         )
@@ -310,13 +313,13 @@ Finally, to facilitate the clear distinction between entity- and domain models, 
 struct PrivacyAgreementParameterEntity: Codable {
     let timestamp: Date
     let isNewsletterAllowed: Bool
-    let isTrackingAllowed: Bool 
+    let isTrackingAllowed: Bool
 }
 ```
 
 ```swift
 enum UserManagement: NetworkTarget {
-    case acceptAgreement 
+    case acceptAgreement
     case uploadImage(Data)
     case updatePrivacyAgreement(PrivacyAgreementEntity)
     case createProfile(profileName: String)
@@ -355,7 +358,7 @@ enum UserManagement: NetworkTarget {
 
 ### Network Plugins
 
-Network Plugins provide the opportunity to modify requests before they are being sent over the network. In addition, applications can get notified whenever a response is received. This is useful when including additional information, e.g. bearer tokens in the request's headers or when extracting information from a response that is received. While _Aphrodite_ also comes with built-in plugins like the `NetworkLoggerPlugin`, custom plugins are created by conforming to the `NetworkPlugin` protocol. 
+Network Plugins provide the opportunity to modify requests before they are being sent over the network. In addition, applications can get notified whenever a response is received. This is useful when including additional information, e.g. bearer tokens in the request's headers or when extracting information from a response that is received. While _Aphrodite_ also comes with built-in plugins like the `NetworkLoggerPlugin`, custom plugins are created by conforming to the `NetworkPlugin` protocol.
 
 ```swift
 public protocol NetworkPlugin {
@@ -369,15 +372,15 @@ public protocol NetworkPlugin {
 
 All methods are optional, i.e., plugins that are only used for information extraction do not have to deal with request preparation. Still, plugins may also take care of both. The `NetworkPluginTargetScope` specifies the set of targets, plugins are applied to. This is especially useful when dealing with multiple backends, i.e., one could define a target scope for each backend and use separate authentication plugins respectively. Plugins that apply to all targets feature an `.universal` target scope. Note that the list of `NetworkPlugins` used by the `Aphrodite` are specified during the client's initialization.
 
-### Example Apps
+### Applications using _Aphrodite_
 
-// TODO: Refer to an example app that uses Aphrodite as Networking Library.
+- [Licenses](https://github.com/LinkAndreas/Licenses): A native macOS App built using Swift UI and Combine.
 
 ## Improvements
 
 The following issues/enhancements can be addressed in future revisions:
 
-- [ ] Write Example App section
+- [x] Write Example App section
 - [ ] Include unit tests to guarantee test coverage
 - [ ] Extend documentation
 
