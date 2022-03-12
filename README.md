@@ -1,7 +1,5 @@
-<p align="center">
-    <img src="logo.png"
-      width=600>
-</p>
+![](assets/logo_light.png#gh-light-mode-only)
+![](assets/logo_dark.png#gh-dark-mode-only)
 
 <p align="center">
     <a href="https://github.com/LinkAndreas/Aphrodite/releases">
