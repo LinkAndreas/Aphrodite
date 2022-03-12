@@ -10,7 +10,7 @@
          alt="Swift: 5.3">
     <img src="https://img.shields.io/badge/Platforms-iOS%20%7C%20macOS%20%7C%20tvOS-00A896.svg"
         alt="Platforms: iOS">
-    <a href="https://github.com/LinkAndreas/Aphrodite/blob/stable/LICENSE.md">
+    <a href="https://github.com/LinkAndreas/Aphrodite/blob/develop/LICENSE">
         <img src="https://img.shields.io/badge/License-MIT-F0F3BD.svg"
               alt="License: MIT">
     </a>
@@ -388,4 +388,4 @@ The design of this library was inspired by _Moya_ ([Link](https://github.com/Moy
 
 ## License
 
-This library is released under the [MIT License](http://opensource.org/licenses/MIT). See LICENSE for details.
+This library is released under the [MIT License](https://github.com/LinkAndreas/Aphrodite/blob/develop/LICENSE). See LICENSE for details.
